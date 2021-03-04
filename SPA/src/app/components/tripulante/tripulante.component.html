@@ -1,0 +1,114 @@
+<h2>Tripulantes</h2>
+<div>
+  <h6>Criação de tripulante</h6>
+  <form action="#">
+    <div>
+      <div>
+        <div class="in mdl-textfield mdl-js-textfield form_padding">
+          <label class="margin_listbox">Número Mecanográfico</label>
+          <input #tripulanteNumeroMecanografico class="mdl-textfield__input"
+            (blur)="verificaNumeroMecanografico(tripulanteNumeroMecanografico.value)" type="text"
+            id="tripulanteNumeroMecanografico">
+        </div>
+        <div class="message">
+          <p>{{message.numeroMecanografico}}</p>
+        </div>
+      </div>
+      <div>
+        <div class="in mdl-textfield mdl-js-textfield form_padding">
+          <label>Nome do tripulante:</label>
+          <input #tripulanteNome class="mdl-textfield__input" (blur)="verificaNome(tripulanteNome.value)" type="text"
+            id="tripulanteNome">
+        </div>
+        <div class="message">
+          <p>{{message.nome}}</p>
+        </div>
+      </div>
+      <div>
+        <div class="in mdl-textfield mdl-js-textfield form_padding">
+          <label>Data de Nascimento:</label>
+          <input #tripulanteDataNascimento class="mdl-textfield__input" type="date"
+            (blur)="verificaDataNascimento(tripulanteDataNascimento.value)" id="tripulanteDataNascimento">
+        </div>
+        <div class="message">
+          <p>{{message.dataNascimento}}</p>
+        </div>
+      </div>
+      <div>
+        <div class="in mdl-textfield mdl-js-textfield form_padding">
+          <label>Número de cartão de cidadão:</label>
+          <input #tripulanteNumeroCartaoCidadao class="mdl-textfield__input" type="text"
+            (blur)="verificaNumeroCartaoCidadao(tripulanteNumeroCartaoCidadao.value)"
+            id="tripulanteNumeroCartaoCidadao">
+        </div>
+        <div class="message">
+          <p>{{message.numeroCartaoCidadao}}</p>
+        </div>
+      </div>
+      <div>
+        <div class="in mdl-textfield mdl-js-textfield form_padding">
+          <label>Nif:</label>
+          <input #tripulanteNif class="mdl-textfield__input" type="text"
+            (blur)="verificaNif(tripulanteNif.value)" id="tripulanteNif">
+        </div>
+        <div class="message">
+          <p>{{message.nif}}</p>
+        </div>
+      </div>
+      <div>
+        <div class="in mdl-textfield mdl-js-textfield form_padding">
+          <label class="margin_listbox">Turno:</label>
+          <select #tripulanteTurno id="tripulanteTurno">
+            <option *ngFor="let turno of turnos" [value]="turno">{{turno}}</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <div class="in mdl-textfield mdl-js-textfield form_padding">
+          <label class="margin_listbox">Código do tipo de tripulante:</label>
+          <select #tripulanteTipoTripulanteId id="tripulanteTipoTripulanteId">
+            <option *ngFor="let tipoTripulante of tiposTripulante" [value]="tipoTripulante.id">{{tipoTripulante.id}} - {{tipoTripulante.description}}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <div class="in mdl-textfield mdl-js-textfield form_padding">
+          <label>Data de Entrada:</label>
+          <input #tripulanteDataEntrada class="mdl-textfield__input" type="date"
+          (blur)="verificaDataSaida(tripulanteDataEntrada.value,tripulanteDataSaida.value)" id="tripulanteDataEntrada">
+        </div>
+        <div class="message">
+          <p>{{message.dataEntrada}}</p>
+        </div>
+      </div>
+      <div>
+        <div class="in mdl-textfield mdl-js-textfield form_padding">
+          <label>Data de Saida:</label>
+          <input #tripulanteDataSaida class="mdl-textfield__input" type="date"
+          (blur)="verificaDataSaida(tripulanteDataEntrada.value,tripulanteDataSaida.value)" id="tripulanteDataSaida">
+        </div>
+        <div class="message">
+          <p>{{message.dataSaida}}</p>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button name="buttonAddTripulante" (click)="adicionarTripulante(tripulanteNumeroMecanografico.value,tripulanteNome.value,
+  tripulanteDataNascimento.value,tripulanteNumeroCartaoCidadao.value,tripulanteNif.value,
+  tripulanteTurno.value,tripulanteTipoTripulanteId.value,tripulanteDataEntrada.value,tripulanteDataSaida.value);
+  tripulanteNumeroMecanografico.value='';
+  tripulanteNome.value='';
+  tripulanteDataNascimento.value='';
+  tripulanteNumeroCartaoCidadao.value='';
+  tripulanteNif.value='';
+  tripulanteTurno.value='';
+  tripulanteTipoTripulanteId.value='';
+  tripulanteDataEntrada.value='';
+  tripulanteDataSaida.value='';
+  clearMessageTripulante()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button_margin">
+    Adicionar tripulante
+  </button>
+</div>

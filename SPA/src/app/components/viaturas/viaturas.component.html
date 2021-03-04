@@ -1,0 +1,55 @@
+<h2>Viaturas</h2>
+<div>
+    <h6>Criação de Viaturas</h6>
+    <div>
+        <div class="form_padding_block">
+            <div class="mdl-textfield mdl-js-textfield form_padding_block">
+                <label>Matricula: </label>
+                <input [(ngModel)]=viatura.matricula class="mdl-textfield__input" type="text" 
+                (blur)="validarMatricula()"  id="matricula">
+            </div>
+            <div class="message">
+                <p>{{message.matricula}}</p>
+            </div>
+        </div>
+
+        <div class="form_padding_block">
+            <div class="mdl-textfield mdl-js-textfield form_padding_block">
+                <label>VIN: </label>
+                <input [(ngModel)]=viatura.vin class="mdl-textfield__input" type="text" 
+                (keyup)="validarVIN()" id="vin">
+            </div>
+            <div class="message">
+                <p>{{message.vin}}</p>
+            </div>
+        </div>
+
+    
+
+    <div class="form_padding_block">
+        <div class="mdl-textfield mdl-js-textfield form_padding_block form-group">
+            <label for="tipo">Tipos de Viatura: </label>
+            <select id="tipoViat" (change)="changeTipoViatura($event.target.value)">
+                <option *ngFor="let tipo of tiposViatura; let i = index" [value]="tipo.id">
+                    {{tiposViatura[i].descricao}}
+                </option>
+            </select>
+        </div>
+    </div>
+
+    <div>
+        <div class="in mdl-textfield mdl-js-textfield form_padding">
+          <label>Data de Entrada:</label>
+          <input [(ngModel)]=viatura.dataEntrada class="mdl-textfield__input" type="date"
+            (blur)="validarDataEntrada()" id="dataEntrada">
+        </div>
+        <div class="message">
+          <p>{{message.dataEntrada}}</p>
+        </div>
+      </div>  
+    
+    <button name="buttonAdicionarViatura" (click)="adicionar();"
+        class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button_margin">
+        Adicionar
+    </button>
+</div>

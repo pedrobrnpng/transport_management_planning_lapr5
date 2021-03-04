@@ -1,0 +1,26 @@
+<h3>Listar Serviços de Viatura</h3>
+<div class="form_padding_block">
+    <div class="in mdl-textfield mdl-js-textfield form_padding">
+        <label>Data:</label>
+        <input #data class="mdl-textfield__input" type="date"
+            (change)="setData(data.value);getServicosViatura()" id="data">
+    </div>
+    <div class="message">
+        <p>{{message.data}}</p>
+    </div>
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th style="min-width: 600px;">Serviços de viatura</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let str of svsStr">
+                <td>{{str}}</td>
+            </tr>
+        </tbody>
+        <div class="message">
+            <p>{{message.tabela}}</p>
+        </div>
+    </table>
+</div>

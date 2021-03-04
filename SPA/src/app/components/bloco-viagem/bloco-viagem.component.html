@@ -1,0 +1,34 @@
+<h3>Adicionar Viagens a Bloco de trabalho</h3>
+<div class="form_padding_block">
+    <div class="in content-width mdl-textfield mdl-js-textfield">
+        <label class="margin_listbox">Bloco:</label>
+        <select id='idBloco' #IdBloco 
+        (change)="setCodigo(IdBloco.value);fillTable()">
+            <option *ngFor="let bloco of blocos">Código: {{bloco.codigo}}, Horas: {{parseHora(bloco.horaInicio)}} - {{parseHora(bloco.horaFim)}}, {{bloco.noInicio}} - {{bloco.noFim}}</option>
+        </select>
+    </div>
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th style="min-width: 500px;">Viagens associadas</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="bloco.codigo!=0">
+            <tr *ngFor="let blocoViagem of blocoViagensStr">
+                <td>{{blocoViagem}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="form_padding_block">
+    <div class="in content-width mdl-textfield mdl-js-textfield">
+        <label class="margin_listbox">Viagem:</label>
+        <select id='idViagem' #IdViagem>
+            <option *ngFor="let viagem of viagensStr">{{viagem}}</option>
+        </select>
+    </div>
+</div>
+<button name="buttonAddViagem" (click)="adicionarBlocoViagem(IdViagem.value)"
+    class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button_margin">
+    Adicionar Viagem
+</button>

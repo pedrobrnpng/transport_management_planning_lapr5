@@ -1,0 +1,49 @@
+# Node.js with Angular
+# Build a Node.js project that uses Angular.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    cd SPA
+    npm install -g @angular/cli
+    npm install
+    npm build
+    cd ..
+    git subtree push --prefix=SPA https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_SPA_NAME.git master
+
+  displayName: 'Deploy SPA'
+
+- script: |
+    cd metadatarede
+    npm install
+    npm test
+    cd ..
+    git subtree push --prefix=metadatarede https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
+  displayName: 'Deploy MDR'
+
+- task: UseDotNet@2
+  inputs:
+    version: '5.0.x'
+    includePreviewVersions: true # Required for preview versions
+
+- script: |
+    cd metadataviagens.Tests
+    dotnet test
+    cd ..
+    cd metadataviagens
+    dotnet build
+    cd ..
+    git subtree push --prefix=metadataviagens https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_MDV_NAME.git master
+  displayName: 'Deploy MDV'

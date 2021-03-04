@@ -1,0 +1,292 @@
+<GlDocumentInfo>
+	<world version="1.1.0">
+		<GlDocument key="GlDocument:1">
+			<GlDocumentNetwork>
+				<Network key="Network:1">
+					<VehicleTypes>
+						<VehicleType key="VehicleType:1" Code="11111111111111111111" Name="Autocarro" Fuel="23" Autonomy="500000" AverageSpeed="30" Cost="10" Currency="EUR" Consumption="30" Emissions="1050">
+							<ParametersValues/>
+							<Vehicles/>
+						</VehicleType>
+						<VehicleType key="VehicleType:2" Code="22222222222222222222" Name="MiniAutocarro" Fuel="23" Autonomy="600000" AverageSpeed="32" Cost="5" Currency="USD" Consumption="18" Emissions="700">
+							<ParametersValues/>
+							<Vehicles/>
+						</VehicleType>
+					</VehicleTypes>
+					<Nodes>
+						<Node key="Node:1" ShortName="AGUIA" Name="Aguiar de Sousa" Latitude="41.1293363229325" Longitude="-8.4464785432391" Type="paragem" IsDepot="False" IsReliefPoint="False">
+							<Capacities/>
+							<InformationPoints/>
+							<CrewTravelTimes/>
+						</Node>
+						<Node key="Node:2" ShortName="BALTR" Name="Baltar" Latitude="41.1937898023744" Longitude="-8.38716802227697" Type="paragem" IsDepot="False" IsReliefPoint="False">
+							<Capacities/>
+							<InformationPoints/>
+							<CrewTravelTimes/>
+						</Node>
+						<Node key="Node:3" ShortName="BESTR" Name="Besteiros" Latitude="41.217018845589" Longitude="-8.34043029659082" Type="paragem" IsDepot="False" IsReliefPoint="False">
+							<Capacities/>
+							<InformationPoints/>
+							<CrewTravelTimes/>
+						</Node>
+						<Node key="Node:4" ShortName="CETE" Name="Cete" Latitude="41.183243425797" Longitude="-8.35164059584564" Type="paragem" IsDepot="False" IsReliefPoint="False">
+							<Capacities/>
+							<InformationPoints/>
+							<CrewTravelTimes/>
+						</Node>
+						<Node key="Node:5" ShortName="CRIST" Name="Cristelo" Latitude="41.2207801252676" Longitude="-8.34639896125324" Type="pontoRendicao" IsDepot="False" IsReliefPoint="True">
+							<Capacities/>
+							<InformationPoints/>
+							<CrewTravelTimes/>
+						</Node>
+						<Node key="Node:6" ShortName="DIGRJ" Name="Duas Igrejas" Latitude="41.2278665802794" Longitude="-8.35481024956726" Type="paragem" IsDepot="False" IsReliefPoint="False">
+							<Capacities/>
+							<InformationPoints/>
+							<CrewTravelTimes/>
+						</Node>
+						<Node key="Node:7" ShortName="ESTLO" Name="Estação (Lordelo)" Latitude="41.2521157104055" Longitude="-8.4227924957086" Type="estacaoRecolha" IsDepot="True" IsReliefPoint="False">
+							<Capacities/>
+							<InformationPoints/>
+							<CrewTravelTimes>
+								<CrewTravelTime key="CrewTravelTime:2" Node="Node:7" Duration="1620"/>
+							</CrewTravelTimes>
+						</Node>
+						<Node key="Node:9" ShortName="ESTPA" Name="Estação (Paredes)" Latitude="41.2082119860192" Longitude="-8.33448520831829" Type="estacaoRecolha" IsDepot="True" IsReliefPoint="False">
+							<Capacities/>
+							<InformationPoints/>
+							<CrewTravelTimes>
+								<CrewTravelTime key="CrewTravelTime:6" Node="Node:9" Duration="1620"/>
+							</CrewTravelTimes>
+						</Node>
+						<Node key="Node:10" ShortName="GAND" Name="Gandra" Latitude="41.1956579348384" Longitude="-8.43958765792976" Type="paragem" IsDepot="False" IsReliefPoint="False">
+							<Capacities/>
+							<InformationPoints/>
+							<CrewTravelTimes/>
+						</Node>
+						<Node key="Node:11" ShortName="LORDL" Name="Lordelo" Latitude="41.2452627470645" Longitude="-8.42293614720057" Type="pontoRendicao" IsDepot="False" IsReliefPoint="True">
+							<Capacities/>
+							<InformationPoints/>
+							<CrewTravelTimes>
+								<CrewTravelTime key="CrewTravelTime:10" Node="Node:11" Duration="300"/>
+							</CrewTravelTimes>
+						</Node>
+						<Node key="Node:12" ShortName="MOURZ" Name="Mouriz" Latitude="41.1983610215263" Longitude="-8.36577272258403" Type="paragem" IsDepot="False" IsReliefPoint="False">
+							<Capacities/>
+							<InformationPoints/>
+							<CrewTravelTimes/>
+						</Node>
+						<Node key="Node:13" ShortName="PARAD" Name="Parada de Todeia" Latitude="41.1765780321068" Longitude="-8.37023578802149" Type="paragem" IsDepot="False" IsReliefPoint="False">
+							<Capacities/>
+							<InformationPoints/>
+							<CrewTravelTimes/>
+						</Node>
+						<Node key="Node:14" ShortName="PARED" Name="Paredes" Latitude="41.2062947118362" Longitude="-8.33566951069481" Type="pontoRendicao" IsDepot="False" IsReliefPoint="True">
+							<Capacities/>
+							<InformationPoints/>
+							<CrewTravelTimes>
+								<CrewTravelTime key="CrewTravelTime:14" Node="Node:14" Duration="1500"/>
+							</CrewTravelTimes>
+						</Node>
+						<Node key="Node:15" ShortName="RECAR" Name="Recarei" Latitude="41.1599363478137" Longitude="-8.42215867462191" Type="paragem" IsDepot="False" IsReliefPoint="False">
+							<Capacities/>
+							<InformationPoints/>
+							<CrewTravelTimes/>
+						</Node>
+						<Node key="Node:16" ShortName="SOBRO" Name="Sobrosa" Latitude="41.2557331783506" Longitude="-8.38118071581788" Type="pontoRendicao" IsDepot="False" IsReliefPoint="True">
+							<Capacities/>
+							<InformationPoints/>
+							<CrewTravelTimes>
+								<CrewTravelTime key="CrewTravelTime:18" Node="Node:16" Duration="900"/>
+							</CrewTravelTimes>
+						</Node>
+						<Node key="Node:18" ShortName="VANDO" Name="Vandoma" Latitude="41.194414" Longitude="-8.407712" Type="paragem" IsDepot="False" IsReliefPoint="False">
+							<Capacities/>
+							<InformationPoints/>
+							<CrewTravelTimes/>
+						</Node>
+						<Node key="Node:20" ShortName="VCCAR" Name="Vila Cova de Carros" Latitude="41.2090666564063" Longitude="-8.35109395257277" Type="paragem" IsDepot="False" IsReliefPoint="False">
+							<Capacities/>
+							<InformationPoints/>
+							<CrewTravelTimes/>
+						</Node>
+					</Nodes>
+					<Lines>
+						<Line key="Line:1" id="1" codigo="1" Name="Paredes_Aguiar" InicialNode="PARED" FinalNode="AGUIA" Color="RGB(38,91,11)">
+							<LinePaths>
+								<LinePath key="LinePath:1" Path="Path:1" Orientation="Return"/>
+								<LinePath key="LinePath:2" Path="Path:3" Orientation="Go"/>
+							</LinePaths>
+							<AllowedVehicles/>
+							<DeniedVehicles/>
+							<AllowedDrivers/>
+							<DeniedDrivers/>
+						</Line>
+						<Line key="Line:2" id="2" codigo="2" Name="Paredes_Gandra" InicialNode="PARED" FinalNode="GAND" Color="RGB(49,23,59)">
+							<LinePaths>
+								<LinePath key="LinePath:3" Path="Path:5" Orientation="Return"/>
+								<LinePath key="LinePath:4" Path="Path:8" Orientation="Go"/>
+							</LinePaths>
+							<AllowedVehicles/>
+							<DeniedVehicles/>
+							<AllowedDrivers/>
+							<DeniedDrivers/>
+						</Line>
+						<Line key="Line:3" id="3" codigo="3" Name="Paredes_Lordelo" InicialNode="PARED" FinalNode="LORDL" Color="RGB(4,204,225)">
+							<LinePaths>
+								<LinePath key="LinePath:5" Path="Path:9" Orientation="Return"/>
+								<LinePath key="LinePath:6" Path="Path:11" Orientation="Go"/>
+							</LinePaths>
+							<AllowedVehicles/>
+							<DeniedVehicles/>
+							<AllowedDrivers/>
+							<DeniedDrivers/>
+						</Line>
+						<Line key="Line:4" id="4" codigo="4" Name="Lordelo_Parada" InicialNode="LORDL" FinalNode="PARAD" Color="RGB(183,248,71)">
+							<LinePaths>
+								<LinePath key="LinePath:7" Path="Path:13" Orientation="Go"/>
+								<LinePath key="LinePath:8" Path="Path:18" Orientation="Return"/>
+								<LinePath key="LinePath:9" Path="Path:24" Orientation="Go"/>
+								<LinePath key="LinePath:10" Path="Path:26" Orientation="Return"/>
+							</LinePaths>
+							<AllowedVehicles/>
+							<DeniedVehicles/>
+							<AllowedDrivers/>
+							<DeniedDrivers/>
+						</Line>
+						<Line key="Line:5" id="5" codigo="5" Name="Sobrosa_Cete" InicialNode="SOBRO" FinalNode="CETE" Color="RGB(152,16,147)">
+							<LinePaths>
+								<LinePath key="LinePath:12" Path="Path:22" Orientation="Go"/>
+								<LinePath key="LinePath:13" Path="Path:20" Orientation="Return"/>
+							</LinePaths>
+							<AllowedVehicles/>
+							<DeniedVehicles/>
+							<AllowedDrivers/>
+							<DeniedDrivers/>
+						</Line>
+					</Lines>
+					<Paths>
+						<Path key="Path:1" id="1" idLine="1" Orientation="volta">
+							<PathNodes>
+								<PathNode key="PathNode:2" id="2" INode="AGUIA" FNode="RECAR" Duration="600" Distance="5000" Sequence="1"/>
+								<PathNode key="PathNode:3" id="3" INode="RECAR" FNode="PARAD" Duration="360" Distance="3200" Sequence="2"/>
+								<PathNode key="PathNode:4" id="4" INode="PARAD" FNode="CETE" Duration="360" Distance="3000" Sequence="3"/>
+								<PathNode key="PathNode:5" id="5" INode="CETE" FNode="PARED" Duration="540" Distance="4500" Sequence="4"/>
+							</PathNodes>
+						</Path>
+						<Path key="Path:3" id="3" idLine="1" Orientation="ida">
+							<PathNodes>
+								<PathNode key="PathNode:12" id="12" INode="PARED" FNode="CETE" Duration="540" Distance="4500"/>
+								<PathNode key="PathNode:13" id="13" INode="CETE" FNode="PARAD" Duration="360" Distance="3000"/>
+								<PathNode key="PathNode:14" id="14" INode="PARAD" FNode="RECAR" Duration="360" Distance="3200"/>
+								<PathNode key="PathNode:15" id="15" INode="RECAR" FNode="AGUIA" Duration="600" Distance="5000"/>
+							</PathNodes>
+						</Path>
+						<Path key="Path:5" id="5" idLine="2" Orientation="volta">
+							<PathNodes>
+								<PathNode key="PathNode:22" id="22" INode="GAND" FNode="VANDO" Duration="600" Distance="5000"/>
+								<PathNode key="PathNode:23" id="23" INode="VANDO" FNode="BALTR" Duration="240" Distance="2000"/>
+								<PathNode key="PathNode:24" id="24" INode="BALTR" FNode="MOURZ" Duration="240" Distance="2000"/>
+								<PathNode key="PathNode:25" id="25" INode="MOURZ" FNode="PARED" Duration="480" Distance="4000"/>
+							</PathNodes>
+						</Path>
+						<Path key="Path:8" id="8" idLine="2" Orientation="ida">
+							<PathNodes>
+								<PathNode key="PathNode:37" id="37" INode="PARED" FNode="MOURZ" Duration="480" Distance="4000"/>
+								<PathNode key="PathNode:38" id="38" INode="MOURZ" FNode="BALTR" Duration="240" Distance="2000"/>
+								<PathNode key="PathNode:39" id="39" INode="BALTR" FNode="VANDO" Duration="240" Distance="2000"/>
+								<PathNode key="PathNode:40" id="40" INode="VANDO" FNode="GAND" Duration="600" Distance="5000"/>
+							</PathNodes>
+						</Path>
+						<Path key="Path:9" id="9" idLine="3" Orientation="volta">
+							<PathNodes>
+								<PathNode key="PathNode:42" id="42" INode="LORDL" FNode="VANDO" Duration="780" Distance="6300"/>
+								<PathNode key="PathNode:43" id="43" INode="VANDO" FNode="BALTR" Duration="240" Distance="2000"/>
+								<PathNode key="PathNode:44" id="44" INode="BALTR" FNode="MOURZ" Duration="240" Distance="2000"/>
+								<PathNode key="PathNode:45" id="45" INode="MOURZ" FNode="PARED" Duration="480" Distance="4000"/>
+							</PathNodes>
+						</Path>
+						<Path key="Path:11" id="11" idLine="3" Orientation="ida">
+							<PathNodes>
+								<PathNode key="PathNode:52" id="52" INode="PARED" FNode="MOURZ" Duration="480" Distance="4000"/>
+								<PathNode key="PathNode:53" id="53" INode="MOURZ" FNode="BALTR" Duration="240" Distance="2000"/>
+								<PathNode key="PathNode:54" id="54" INode="BALTR" FNode="VANDO" Duration="240" Distance="2000"/>
+								<PathNode key="PathNode:55" id="55" INode="VANDO" FNode="LORDL" Duration="780" Distance="6300"/>
+							</PathNodes>
+						</Path>
+						<Path key="Path:13" id="13" idLine="4" Orientation="ida">
+							<PathNodes>
+								<PathNode key="PathNode:62" id="62" INode="BALTR" FNode="VCCAR" Duration="240" Distance="2000"/>
+								<PathNode key="PathNode:69" id="69" INode="VCCAR" FNode="CRIST" Duration="240" Distance="2000"/>
+							</PathNodes>
+						</Path>
+						<Path key="Path:18" id="18 idLine="4" Orientation="volta">
+							<PathNodes>
+								<PathNode key="PathNode:74" id="74" INode="CRIST" FNode="VCCAR" Duration="240" Distance="2000"/>
+								<PathNode key="PathNode:75" id="75" INode="VCCAR" FNode="BALTR" Duration="240" Distance="2000"/>
+							</PathNodes>
+						</Path>
+						<Path key="Path:20" id="20" idLine="5" Orientation="volta">
+							<PathNodes>
+								<PathNode key="PathNode:80" id="80" INode="CETE" FNode="MOURZ" Duration="300" Distance="2500"/>
+								<PathNode key="PathNode:81" id="81" INode="MOURZ" FNode="VCCAR" Duration="240" Distance="2000"/>
+								<PathNode key="PathNode:82" id="82" INode="VCCAR" FNode="BESTR" Duration="240" Distance="2000"/>
+								<PathNode key="PathNode:83" id="83" INode="BESTR" FNode="CRIST" Duration="360" Distance="3000"/>
+								<PathNode key="PathNode:84" id="84" INode="CRIST" FNode="SOBRO" Duration="240" Distance="2000"/>
+							</PathNodes>
+						</Path>
+						<Path key="Path:22" id="33" idLine="5" Orientation="ida">
+							<PathNodes>
+								<PathNode key="PathNode:92" id="92" INode="SOBRO" FNode="CRIST" Duration="240" Distance="2000"/>
+								<PathNode key="PathNode:93" id="93" INode="CRIST" FNode="BESTR" Duration="360" Distance="3000"/>
+								<PathNode key="PathNode:94" id="94" INode="BESTR" FNode="VCCAR" Duration="240" Distance="2000"/>
+								<PathNode key="PathNode:95" id="95" INode="VCCAR" FNode="MOURZ" Duration="240" Distance="2000"/>
+								<PathNode key="PathNode:96" id="96" INode="MOURZ" FNode="CETE" Duration="300" Distance="2500"/>
+							</PathNodes>
+						</Path>
+						<Path key="Path:24" id="24" idLine="4" Orientation="ida">
+							<PathNodes>
+								<PathNode key="PathNode:104" id="104" INode="LORDL" FNode="DIGRJ" Duration="300" Distance="2500"/>
+								<PathNode key="PathNode:105" id="105" INode="DIGRJ" FNode="CRIST" Duration="240" Distance="2000"/>
+								<PathNode key="PathNode:106" id="106" INode="CRIST" FNode="VCCAR" Duration="240" Distance="2000"/>
+								<PathNode key="PathNode:107" id="107" INode="VCCAR" FNode="BALTR" Duration="240" Distance="2000"/>
+								<PathNode key="PathNode:108" id="108" INode="BALTR" FNode="PARAD" Duration="300" Distance="2500"/>
+							</PathNodes>
+						</Path>
+						<Path key="Path:26" id="26" idLine="4" Orientation="volta">
+							<PathNodes>
+								<PathNode key="PathNode:116" id="116" INode="PARAD" FNode="BALTR" Duration="300" Distance="2500"/>
+								<PathNode key="PathNode:117" id="117" INode="BALTR" FNode="VCCAR" Duration="240" Distance="2000"/>
+								<PathNode key="PathNode:118" id="118" INode="VCCAR" FNode="CRIST" Duration="240" Distance="2000"/>
+								<PathNode key="PathNode:119" id="119" INode="CRIST" FNode="DIGRJ" Duration="240" Distance="2000"/>
+								<PathNode key="PathNode:120" id="120" INode="DIGRJ" FNode="LORDL" Duration="300" Distance="2500"/>
+							</PathNodes>
+						</Path>
+						<Path key="Path:27" id="27" idLine="4" Orientation="istoeumerrook">
+							<PathNodes>
+								<PathNode key="PathNode:116" id="116" INode="PARAD" FNode="BALTR" Duration="300" Distance="2500"/>
+								<PathNode key="PathNode:117" id="117" INode="BALTR" FNode="VCCAR" Duration="240" Distance="2000"/>
+								<PathNode key="PathNode:118" id="118" INode="VCCAR" FNode="CRIST" Duration="240" Distance="2000"/>
+								<PathNode key="PathNode:119" id="119" INode="CRIST" FNode="DIGRJ" Duration="240" Distance="2000"/>
+								<PathNode key="PathNode:120" id="120" INode="DIGRJ" FNode="LORDL" Duration="300" Distance="2500"/>
+							</PathNodes>
+						</Path>
+					</Paths>
+					<DriverDutyTypes>
+						<DriverDutyType key="DriverDutyType:3" id="3" Name="seguido">
+							<ParametersValues>
+							</ParametersValues>
+							<AllowedDriverTypes/>
+							<DeniedDriverTypes/>
+						</DriverDutyType>
+						<DriverDutyType key="DriverDutyType:2" id="2" Name="2 etapas">
+							<ParametersValues>
+							</ParametersValues>
+							<AllowedDriverTypes/>
+							<DeniedDriverTypes/>
+						</DriverDutyType>
+					</DriverDutyTypes>
+				</Network>
+			</GlDocumentNetwork>
+		</GlDocument>
+	</world>
+</GlDocumentInfo>

@@ -1,0 +1,17 @@
+.form_padding{
+    padding: 10px;
+    display: block;
+}
+
+.button_margin {
+    margin: 10px;
+}
+
+.label_text_padding{
+    top:17px;
+    left:10px;
+}
+
+.label_text_padding:after{
+    bottom:10px;
+}

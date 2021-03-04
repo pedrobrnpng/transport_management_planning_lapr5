@@ -1,0 +1,95 @@
+<h2>Tipos Viatura</h2>
+<div>
+    <h6>Adição de tipos de viatura</h6>
+    
+        <div>
+            <div class="mdl-textfield mdl-js-textfield form_padding">
+                <label>Codigo:</label>
+                <input [(ngModel)]=tipoViatura.id class="mdl-textfield__input" type="text"
+                    (keyup)="validarCodigo()" id="tvid">
+            </div>
+            <div class="message">
+                <p>{{message.id}}</p>
+            </div>
+        </div>
+        
+        <div>
+            <div class="mdl-textfield mdl-js-textfield form_padding">
+                <label>Descrição:</label>
+                <input [(ngModel)]=tipoViatura.descricao class="mdl-textfield__input" type="text" 
+                    (keyup)="validarDescricao()" id="descricao">
+            </div>
+            <div class="message">
+                <p>{{message.descricao}}</p>
+            </div>
+        </div>
+        <div>
+            <div class="form-group">
+                <label for="combustivel">Tipo de Combustivel </label>
+                <select id="combustivel" (click)="changeCombustivel($event.target.value)">
+                    <option *ngFor="let combustivel of keysCombustivel" [value]="combustivel">
+                        {{tCombustivel[combustivel]}}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <div class="mdl-textfield mdl-js-textfield form_padding">
+                <label>Autonomia:</label>
+                <input [(ngModel)]=tipoViatura.autonomia class="mdl-textfield__input" type="number" 
+                    (keyup)="validarAutonomia()" id="autonomia">
+            </div>
+            <div class="message">
+                <p>{{message.autonomia}}</p>
+            </div>
+        </div>
+
+        <div>
+            <div class="mdl-textfield mdl-js-textfield form_padding">
+                <label>Velocidade Média:</label>
+                <input [(ngModel)]=tipoViatura.velocidadeMedia class="mdl-textfield__input" type="number" 
+                    (keyup)="validarVelocidade()" id="velocidade">
+            </div>
+            <div class="message">
+                <p>{{message.velocidadeMedia}}</p>
+            </div>
+        </div>
+
+        <div>
+            <div class="mdl-textfield mdl-js-textfield form_padding">
+                <label>Custo por KM:</label>
+                <input [(ngModel)]=tipoViatura.custoKM.valor class="mdl-textfield__input" type="number" 
+                        (keyup)="validarValor()" id="valor">
+            </div>
+            <div class="message">
+                <p>{{message.valor}}</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="moeda">Tipo de moeda </label>
+            <select id="moeda" (click)="changeMoeda($event.target.value)">
+                <option *ngFor="let moeda of moedas" [value]="moeda">
+                    {{moeda}}
+                </option>
+            </select>
+        </div>
+
+        <div>
+            <div class="mdl-textfield mdl-js-textfield form_padding">
+                <label>Consumo Médio:</label>
+                <input [(ngModel)]=tipoViatura.consumoMedio class="mdl-textfield__input" type="number" 
+                    (keyup)="validarConsumo()" id="consumo">
+            </div>
+            <div class="message">
+                <p>{{message.consumoMedio}}</p>
+            </div>
+        </div>
+ 
+
+    <button name="button" (click)="adicionar();"
+        class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button_margin">
+        Adicionar
+    </button>
+    
+</div>

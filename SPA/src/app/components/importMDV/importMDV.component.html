@@ -1,0 +1,15 @@
+<h2>Importar Blocos de Trabalho, Viagens, Serviços de viatura e Serviços de tripulante</h2>
+<div class="form_padding_block">
+    <h5>Submeter ficheiro .glx</h5>
+    <form action="/action_page.php">
+        <label for="file">Selecione um ficheiro:</label>
+        <p></p>
+        <input type="file" id="file" accept=".glx" (change)="handleFileInput($event.target.files)"><br><br>
+    </form>
+
+    <button [disabled]="loading" name="enviarBtn" (click)="importarDados()"
+        class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button_margin">
+        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+        Enviar
+    </button>
+</div>

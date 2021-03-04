@@ -1,0 +1,107 @@
+<h2>Linhas</h2>
+<div>
+    <h6>Criação de Linhas</h6>
+    <div>
+        <div class="form_padding_block">
+            <div class="mdl-textfield mdl-js-textfield form_padding_block">
+                <label>Codigo: </label>
+                <input [(ngModel)]=linha.id class="mdl-textfield__input" type="text" 
+                (keyup)="validarID()" id="id">
+            </div>
+            <div class="message">
+                <p>{{message.id}}</p>
+            </div>
+        </div>
+
+        <div class="form_padding_block">
+            <div class="mdl-textfield mdl-js-textfield form_padding_block form-group">
+                <label for="noI">No inicial: </label>
+                <select id="noInicial" (change)="changeNoInicial($event.target.value)">
+                    <option *ngFor="let noI of nos; let i = index" [value]="noI.id_abreviature">
+                        {{nos[i].name}}
+                    </option>
+                </select>
+            </div><br>
+            <div class="mdl-textfield mdl-js-textfield form_padding_block form-group">
+                <label for="noF">No Final: </label>
+                <select id="noFinal" (change)="changeNoFinal($event.target.value)">
+                    <option *ngFor="let noF of nos; let i = index" [value]="noF.id_abreviature">
+                        {{nos[i].name}}
+                    </option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form_padding_block">
+            <div class="mdl-textfield mdl-js-textfield form_padding_block">
+                <label>Nome:</label>
+                <input [(ngModel)]=linha.nome class="mdl-textfield__input" type="text" 
+                (keyup)="validarNome()" id="nome">
+            </div>
+            <div class="message">
+                <p>{{message.nome}}</p>
+            </div>
+        </div>  
+    </div>
+
+    <div class="form_padding_block">
+        <div class="mdl-textfield mdl-js-textfield form_padding_block form-group">
+                <label for="tipo">Tipos Tripulante: </label>
+                <select id="tipoTrip" (change)="addTipoTripulante($event.target.value)">
+                    <option *ngFor="let tipo of tTripulante; let i = index" [value]="tipo.id">
+                        {{tTripulante[i].description}}
+                    </option>
+                </select>
+            </div><br>
+            <div class="mdl-textfield mdl-js-textfield form_padding_block form-group">
+                <label for="tipo">Tipos Viatura: </label>
+                <select id="tipoViat" (change)="addTipoViatura($event.target.value)">
+                    <option *ngFor="let tipo of tViatura; let i = index" [value]="tipo.id">
+                        {{tViatura[i].descricao}}
+                    </option>
+                </select>
+            </div>
+    </div>
+
+    <div class="form_padding_block">
+        <div class="mdl-textfield mdl-js-textfield form_padding_block">
+            <label for="favcolor">Selecionar cor:  </label>
+            <input type="color" id="color" name="color" value="#ff0000" (input)="changeCor($event.target.value);validarCor()">
+        </div>
+        <div class="message">
+            <p>{{message.cor}}</p>
+        </div>
+    </div>        
+    
+    <button name="button" (click)="adicionar();"
+        class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button_margin">
+        Adicionar
+    </button>
+</div>
+
+<div>
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th style="width: 150px;">Código da Linha:</th>
+                <th style="width: 650px;">Nó Inicial</th>
+                <th style="width: 650px;">Nó Final</th>
+                <th style="width: 150px;">Nome</th>
+                <th style="width: 150px;">Tipos de Tripulante</th>
+                <th style="width: 150px;">Tipos de Viatura</th>
+                <th style="width: 150px;">Cor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let linha of linhas">
+                <td>{{linha.id}}</td>
+                <td>{{linha.noInicial}}</td>
+                <td>{{linha.noFinal}}</td>
+                <td>{{linha.nome}}</td>
+                <td>{{linha.idTiposTripulante}}</td>
+                <td>{{linha.idTiposViatura}}</td>
+                <td>{{linha.cor}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

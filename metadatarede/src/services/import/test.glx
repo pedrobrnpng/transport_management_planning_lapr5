@@ -1,0 +1,48 @@
+<GlDocumentInfo>
+	<world version="1.1.0">
+		<GlDocument key="GlDocumentTest:1">
+			<GlDocumentNetwork>
+				<Network key="Network:1">
+					<VehicleTypes>
+						<VehicleType key="VehicleType:1" id="1" Code="11111111111111111111" Name="Foguete" Fuel="23" Autonomy="500000" AverageSpeed="300" Cost="10" Currency="EUR" Consumption="30" Emissions="1050">
+							<ParametersValues/>
+							<Vehicles/>
+						</VehicleType>
+					</VehicleTypes>
+					#<Nodes>
+						<Node key="Node:1" ShortName="PORTO" Name="Porto" Latitude="41.1293363229325" Longitude="-8.4464785432391" Type="paragem" IsDepot="False" IsReliefPoint="False">
+							<Capacities/>
+							<InformationPoints/>
+							<CrewTravelTimes/>
+						</Node>
+					</Nodes>
+					#<Lines>
+						<Line key="Line:1" id="1" codigo="1" Name="Porto_Nova_Iorque" InicialNode="PORT" FinalNode="NOVIQ" Color="RGB(38,91,11)">
+							<LinePaths>
+								<LinePath key="LinePath:1" Path="Path:1" Orientation="Return"/>
+							</LinePaths>
+							<AllowedVehicles/>
+							<DeniedVehicles/>
+							<AllowedDrivers/>
+							<DeniedDrivers/>
+						</Line>
+					#<Paths>
+						<Path key="Path:1" id="1" idLine="1" Orientation="volta">
+							<PathNodes>
+								<PathNode key="PathNode:1" id="1" INode="NOVIQ" FNode="TOQIO" Duration="600" Distance="5000" Sequence="1"/>
+							</PathNodes>
+						</Path>
+                    </Paths>
+					<DriverDutyTypes>
+						<DriverDutyType key="DriverDutyType:1" id="1" Name="astronauta">
+							<ParametersValues>
+							</ParametersValues>
+							<AllowedDriverTypes/>
+							<DeniedDriverTypes/>
+						</DriverDutyType>
+					</DriverDutyTypes>
+				</Network>
+			</GlDocumentNetwork>
+		</GlDocument>
+	</world>
+</GlDocumentInfo>

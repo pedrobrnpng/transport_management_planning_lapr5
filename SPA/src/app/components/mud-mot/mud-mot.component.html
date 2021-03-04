@@ -1,0 +1,33 @@
+<div>
+    <h2>Mudança de Motorista</h2>
+
+    <div class="form_padding_block">
+        <div class="in content-width mdl-textfield mdl-js-textfield">
+            <label class="margin_listbox">Id do nó de Início:</label>
+            <select name='sgIdNoInicio' #sgIdNoInicio 
+            (change)="verificaNoInicio(sgIdNoInicio.value,sgIdNoFim.value)">
+                <option *ngFor="let no of nos" [value]="no.id_abreviature">{{no.id_abreviature}}</option>
+            </select>
+        </div>
+        <div class="message">
+            <p>{{message.idNoInicio}}</p>
+        </div>
+    </div>
+    <div class="form_padding_block">
+        <div class="in content-width mdl-textfield mdl-js-textfield">
+            <label class="margin_listbox">Id do nó de Fim:</label>
+            <select name='sgIdNoFim' #sgIdNoFim  
+            (change)="verificaNoFim(sgIdNoFim.value);verificaNoInicio(sgIdNoInicio.value,sgIdNoFim.value)">
+                <option *ngFor="let no of nos" [value]="no.id_abreviature">{{no.id_abreviature}}</option>
+            </select>
+        </div>
+        <div class="message">
+            <p>{{message.idNoFim}}</p>
+        </div>
+    </div>
+
+    <button name="buttonAskPath" (click)="planMudMot(sgIdNoInicio.value,sgIdNoFim.value);"
+        class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button_margin">
+        Melhor mudança de motorista
+    </button>
+</div>

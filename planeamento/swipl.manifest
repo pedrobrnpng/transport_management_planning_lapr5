@@ -1,0 +1,1 @@
+server.pl ./algoritmos/a_star.pl ./baseconhecimento/consumo_dados.pl ./baseconhecimento/horarios.pl ./baseconhecimento/files/linhas_teste.pl

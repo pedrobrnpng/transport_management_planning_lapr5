@@ -1,0 +1,32 @@
+<div class="card">
+    <h3 class="card-header">Login</h3>
+    <div class="card-body">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-group" class="in mdl-textfield mdl-js-textfield form_padding">
+                <label for="username">Email</label>
+                <input id="email_input" type="text" formControlName="email" class="form-control" class="mdl-textfield__input" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">É necessário introduzir Email</div>
+                </div>
+            </div>
+            <p></p>
+            <div class="form-group" class="in mdl-textfield mdl-js-textfield form_padding">
+                <label for="password">Password</label>
+                <input id="password_input" type="password" formControlName="password" class="form-control" class="mdl-textfield__input" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">É necessário introduzir Password</div>
+                </div>
+            </div>
+            <p></p>
+            <div class="form-group">
+                <button name="button" [disabled]="loading" class="btn btn-primary" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button_margin">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Login
+                </button>
+                <p></p>
+                <a routerLink="../register" class="btn btn-link">Registar</a>
+                <p></p>
+            </div>
+        </form>
+    </div>
+</div>

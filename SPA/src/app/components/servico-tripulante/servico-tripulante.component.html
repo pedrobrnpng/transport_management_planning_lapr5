@@ -1,0 +1,61 @@
+<h2>Serviços de Tripulante</h2>
+<div>
+  <h6>Criação de serviço de tripulante</h6>
+  <form action="#">
+    <div class="">
+      <div>
+        <div class="in mdl-textfield mdl-js-textfield form_padding">
+          <label class="margin_listbox">Número Mecanográfico do Tripulante:</label>
+          <select #servicoTripulanteTid id="servicoTripulanteTid">
+            <option *ngFor="let tripulante of tripulantes" [value]="tripulante.numeroMecanografico">
+              {{tripulante.numeroMecanografico}} - {{tripulante.nome}}</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <div class="in mdl-textfield mdl-js-textfield form_padding">
+          <label>Código do serviço de tripulante:</label>
+          <input #servicoTripulanteCodigo class="mdl-textfield__input"
+            (blur)="verificaCodigo(servicoTripulanteCodigo.value)" type="text" id="servicoTripulanteCodigo">
+        </div>
+        <div class="message">
+          <p>{{message.nome}}</p>
+        </div>
+      </div>
+      <div>
+        <div class="in mdl-textfield mdl-js-textfield form_padding">
+          <label for="favcolor">Selecionar cor: </label>
+          <input #servicoTripulanteCor type="color" id="color" name="color" value="#ff0000">
+        </div>
+      </div>
+      <div class="autocomplete">
+        <div class="chips-input-container">
+          <div class="user-chip" *ngFor="let blocoTrabalho of blocosTrabalhoSelecionados">
+            {{blocoTrabalho.codigo}}
+            <span (click)="deleteSelects(blocoTrabalho)" class="delete-icon-chip">&#10006;</span>
+          </div>
+          <input #elem id="stblocosTrabalho" class="border" readonly name="suggestion" type="text" placeholder="Blocos de trabalho"
+            (click)="suggest()" [(ngModel)]="userSelectsString">
+        </div>
+        <div #menu id="stblocosTrabalho2" class="autocomplete-items" *ngIf="show">
+          <div *ngFor="let blocoTrabalho of blocosTrabalho"
+            [ngClass]="isSelected(blocoTrabalho) ? 'selected-suggestion' : ''"
+            (click)="selectSuggestion(blocoTrabalho)">{{blocoTrabalho.codigo}}  {{blocoTrabalho.noInicio}}-{{blocoTrabalho.noFim}}  {{blocoTrabalho.horaInicio}}s-{{blocoTrabalho.horaFim}}s</div>
+        </div>
+        <div class="message">
+          <p>{{message.listaBlocosTrabalho}}</p>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button name="buttonAddServicoTripulante" (click)="adicionarServicoTripulante(servicoTripulanteTid.value,servicoTripulanteCodigo.value,
+  servicoTripulanteCor.value);
+  servicoTripulanteTid.value='';
+  servicoTripulanteCodigo.value='';
+  servicoTripulanteCor.value='';
+  clearMessage()" class="margintop mdl-button mdl-js-button mdl-button--raised mdl-button--colored button_margin">
+    Adicionar serviço de tripulante
+  </button>
+</div>

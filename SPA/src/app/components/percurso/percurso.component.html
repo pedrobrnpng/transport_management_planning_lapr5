@@ -1,0 +1,156 @@
+<h2>Percursos</h2>
+<div>
+    <h6>Criação de percurso</h6>
+    <form action="#">
+        <div class="form_padding_block">
+            <div class="in mdl-textfield mdl-js-textfield form_padding_inline">
+                <label>Código do segmento de rede:</label>
+                <input #sgId class="mdl-textfield__input" type="text" (blur)="verificaIdSegmento(sgId.value)" id="idSg">
+            </div>
+            <div class="message">
+                <p>{{message.idSegmento}}</p>
+            </div>
+        </div>
+        <div class="form_padding_block">
+            <div class="in content-width mdl-textfield mdl-js-textfield">
+                <label class="margin_listbox">Id do nó de início:</label>
+                <select id='idNoInicio' #sgIdNoInicio
+                (click)="verificaNoInicio(sgIdNoInicio.value,sgIdNoFim.value);verificaNoFim(sgIdNoInicio.value,sgIdNoFim.value)">
+                    <option *ngFor="let no of nos" [value]="no.id_abreviature">{{no.id_abreviature}}</option>
+                </select>
+            </div>
+            <div class="message">
+                <p>{{message.idNoInicio}}</p>
+            </div>
+        </div>
+        <div class="form_padding_block">
+            <div class="in content-width mdl-js-textfield">
+                <label class="margin_listbox">Id do nó de Fim:</label>
+                <select id='idNoFim' #sgIdNoFim
+                (click)="verificaNoFim(sgIdNoInicio.value,sgIdNoFim.value);verificaNoInicio(sgIdNoInicio.value,sgIdNoFim.value)">
+                    <option *ngFor="let no of nos" [value]="no.id_abreviature">{{no.id_abreviature}}</option>
+                </select>
+            </div>
+            <div class="message">
+                <p>{{message.idNoFim}}</p>
+            </div>
+        </div>
+        <div class="form_padding_block">
+            <div class="in mdl-textfield mdl-js-textfield form_padding_inline">
+                <label>Distancia:</label>
+                <input #sgDistancia class="mdl-textfield__input" type="text"
+                    (blur)="verificaDistancia(sgDistancia.value)" id="distanciaValue">
+            </div>
+            <div class="message">
+                <p>{{message.distancia}}</p>
+            </div>
+        </div>
+        <div class="form_padding_block">
+            <div class="in mdl-textfield mdl-js-textfield form_padding_inline">
+                <label class="margin_listbox">Unidade de distancia:</label>
+                <select id='distanciaUnidade' #sgUnidadeDistancia>
+                    <option *ngFor="let unidadeDistancia of unidadesDistancia" [value]="unidadeDistancia">{{unidadeDistancia}}</option>
+                </select>
+            </div>
+            <div class="message">
+                <p>{{message.unidadeDistancia}}</p>
+            </div>
+        </div>
+        <div class="form_padding_block">
+            <div class="in mdl-textfield mdl-js-textfield form_padding_inline">
+                <label>Tempo de viagem:</label>
+                <input #sgTempoViagem class="mdl-textfield__input" type="text"
+                    (blur)="verificaTempo(sgTempoViagem.value)" id="tempoViagemValue">
+            </div>
+            <div class="message">
+                <p>{{message.tempoViagem}}</p>
+            </div>
+        </div>
+        <div class="form_padding_block">
+            <div class="in content-width mdl-textfield mdl-js-textfield form_padding_inline">
+                <label class="margin_listbox">Unidade de tempo de viagem:</label>
+                <select id='tempoViagemUnidade' #sgUnidadeTempo>
+                    <option *ngFor="let unidadeTempo of unidadesTempo" [value]="unidadeTempo">{{unidadeTempo}}</option>
+                </select>
+            </div>
+            <div class="message">
+                <p>{{message.unidadeTempoViagem}}</p>
+            </div>
+        </div>
+    </form>
+    <button name="buttonAddSg" (click)="adicionarSegmento(sgId.value,sgIdNoInicio.value,sgIdNoFim.value,
+    sgDistancia.value,sgUnidadeDistancia.value,sgTempoViagem.value,sgUnidadeTempo.value);
+    sgId.value='';sgIdNoInicio.value='';sgIdNoFim.value='';sgDistancia.value='';sgUnidadeDistancia.value='';
+    sgTempoViagem.value='';sgUnidadeTempo.value='';clearMessageSegmento()"
+        class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button_margin">
+        Adicionar segmento de rede
+    </button>
+    <form action="">
+        <div class="form_padding_block">
+            <div class="in mdl-textfield mdl-js-textfield form_padding form_padding_inline">
+                <label>Código do percurso:</label>
+                <input #percursoId class="mdl-textfield__input" type="text" (blur)="verificaPercurso(percursoId.value)"
+                    id="idP">
+            </div>
+            <div class="message">
+                <p>{{message.idPercurso}}</p>
+            </div>
+        </div>
+        <div class="form_padding_block">
+            <div class="in mdl-textfield mdl-js-textfield form_padding form_padding_inline">
+                <label class="margin_listbox">Id da linha:</label>
+                <select id='idLinhaP' #percursoIdLinha>
+                    <option *ngFor="let linha of linhas" [value]="linha.id">{{linha.id}} - {{linha.noInicial}}-{{linha.noFinal}}</option>
+                </select>
+            </div>
+            <div class="message">
+                <p>{{message.idLinha}}</p>
+            </div>
+        </div>
+        <div class="form_padding_block">
+            <div class="in mdl-textfield mdl-js-textfield form_padding form_padding_inline">
+                <label class="margin_listbox">Direção:</label>
+                <select id='direcaoP' #percursoDirecao>
+                    <option *ngFor="let direcao of direcoes" [value]="direcao">{{direcao}}</option>
+                </select>
+            </div>
+            <div class="message">
+                <p>{{message.direcao}}</p>
+            </div>
+        </div>
+    </form>
+    <button name="buttonAddP" (click)="adicionarPercurso(percursoId.value,percursoIdLinha.value,percursoDirecao.value);
+    percursoId.value='';percursoIdLinha.value='';percursoDirecao.value='';clear();clearMessagePercurso()"
+        class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button_margin">
+        Adicionar percurso
+    </button>
+</div>
+<app-message></app-message>
+<div class="form_padding_block">
+  <div class="in mdl-textfield mdl-js-textfield form_padding form_padding_inline">
+      <label class="margin_listbox">Id da linha:</label>
+      <select id='idLinhaP' (change)="getPercursosByLinha($event.target.value)">
+          <option *ngFor="let linha of linhas" [value]="linha.id">{{linha.id}} - {{linha.noInicial}}-{{linha.noFinal}}</option>
+      </select>
+  </div>
+</div>
+<div>
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th style="width: 150px;">Código do percurso:</th>
+                <th style="width: 650px;">Segmentos de rede</th>
+                <th style="width: 150px;">Linha</th>
+                <th style="width: 150px;">Direção</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let percurso of percursos">
+                <td>{{percurso.id}}</td>
+                <td>{{getSegmentos(percurso)}}</td>
+                <td>{{getLinha(percurso.idLinha)}}</td>
+                <td>{{percurso.direcao}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,237 @@
+<GlDocumentSchedule>
+	<Schedule key="Schedule:1">
+		<Trips>
+			<Trip key="100" StartTime="12/15/2021 8:40:00" Line="1" Path="3">
+				<PassingTimes>
+					<PassingTime key="PassingTime:276" Time="73800" Node="Node:14" IsUsed="True" IsReliefPoint="True"/>
+					<PassingTime key="PassingTime:277" Time="74280" Node="Node:4" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:278" Time="74580" Node="Node:13" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:279" Time="74880" Node="Node:15" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:280" Time="75420" Node="Node:1" IsUsed="True" IsReliefPoint="False"/>
+				</PassingTimes>
+				<AllowedVehicleTypes/>
+				<DeniedVehicleTypes/>
+			</Trip>
+			<Trip key="120" StartTime="12/15/2021 10:00:00" Line="1" Path="1">
+				<PassingTimes>
+					<PassingTime key="PassingTime:271" Time="72900" Node="Node:14" IsUsed="True" IsReliefPoint="True"/>
+					<PassingTime key="PassingTime:272" Time="73380" Node="Node:4" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:273" Time="73680" Node="Node:13" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:274" Time="73980" Node="Node:15" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:275" Time="74520" Node="Node:1" IsUsed="True" IsReliefPoint="False"/>
+				</PassingTimes>
+				<AllowedVehicleTypes/>
+				<DeniedVehicleTypes/>
+			</Trip>
+			<Trip key="130" StartTime="12/15/2021 9:00:00" Line="1" Path="3">
+				<PassingTimes>
+					<PassingTime key="PassingTime:266" Time="72000" Node="Node:14" IsUsed="True" IsReliefPoint="True"/>
+					<PassingTime key="PassingTime:267" Time="72480" Node="Node:4" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:268" Time="72780" Node="Node:13" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:269" Time="73080" Node="Node:15" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:270" Time="73620" Node="Node:1" IsUsed="True" IsReliefPoint="False"/>
+				</PassingTimes>
+				<AllowedVehicleTypes/>
+				<DeniedVehicleTypes/>
+			</Trip>
+			<Trip key="140" StartTime="12/21/2021 11:00:00" Line="1" Path="1">
+				<PassingTimes>
+					<PassingTime key="PassingTime:261" Time="71100" Node="Node:14" IsUsed="True" IsReliefPoint="True"/>
+					<PassingTime key="PassingTime:262" Time="71580" Node="Node:4" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:263" Time="71880" Node="Node:13" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:264" Time="72180" Node="Node:15" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:265" Time="72720" Node="Node:1" IsUsed="True" IsReliefPoint="False"/>
+				</PassingTimes>
+				<AllowedVehicleTypes/>
+				<DeniedVehicleTypes/>
+			</Trip>
+			<Trip key="150" StartTime="12/25/2021 12:40:00" Line="1" Path="3">
+				<PassingTimes>
+					<PassingTime key="PassingTime:256" Time="70200" Node="Node:14" IsUsed="True" IsReliefPoint="True"/>
+					<PassingTime key="PassingTime:257" Time="70680" Node="Node:4" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:258" Time="70980" Node="Node:13" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:259" Time="71280" Node="Node:15" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:260" Time="71820" Node="Node:1" IsUsed="True" IsReliefPoint="False"/>
+				</PassingTimes>
+				<AllowedVehicleTypes/>
+				<DeniedVehicleTypes/>
+			</Trip>
+			<Trip key="160" StartTime="12/15/2021 13:40:00" Line="1" Path="1">
+				<PassingTimes>
+					<PassingTime key="PassingTime:251" Time="69300" Node="Node:14" IsUsed="True" IsReliefPoint="True"/>
+					<PassingTime key="PassingTime:252" Time="69780" Node="Node:4" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:253" Time="70080" Node="Node:13" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:254" Time="70380" Node="Node:15" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:255" Time="70920" Node="Node:1" IsUsed="True" IsReliefPoint="False"/>
+				</PassingTimes>
+				<AllowedVehicleTypes/>
+				<DeniedVehicleTypes/>
+			</Trip>
+			<Trip key="170" StartTime="12/15/2021 14:40:00" Line="1" Path="3">
+				<PassingTimes>
+					<PassingTime key="PassingTime:246" Time="68400" Node="Node:14" IsUsed="True" IsReliefPoint="True"/>
+					<PassingTime key="PassingTime:247" Time="68880" Node="Node:4" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:248" Time="69180" Node="Node:13" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:249" Time="69480" Node="Node:15" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:250" Time="70020" Node="Node:1" IsUsed="True" IsReliefPoint="False"/>
+				</PassingTimes>
+				<AllowedVehicleTypes/>
+				<DeniedVehicleTypes/>
+			</Trip>
+			<Trip key="180" StartTime="12/15/2021 15:40:00" Line="1" Path="1">
+				<PassingTimes>
+					<PassingTime key="PassingTime:241" Time="67500" Node="Node:14" IsUsed="True" IsReliefPoint="True"/>
+					<PassingTime key="PassingTime:242" Time="67980" Node="Node:4" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:243" Time="68280" Node="Node:13" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:244" Time="68580" Node="Node:15" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:245" Time="69120" Node="Node:1" IsUsed="True" IsReliefPoint="False"/>
+				</PassingTimes>
+				<AllowedVehicleTypes/>
+				<DeniedVehicleTypes/>
+			</Trip>
+			<Trip key="190" StartTime="12/20/2021 16:40:00" Line="1" Path="3">
+				<PassingTimes>
+					<PassingTime key="PassingTime:236" Time="66600" Node="Node:14" IsUsed="True" IsReliefPoint="True"/>
+					<PassingTime key="PassingTime:237" Time="67080" Node="Node:4" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:238" Time="67380" Node="Node:13" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:239" Time="67680" Node="Node:15" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:240" Time="68220" Node="Node:1" IsUsed="True" IsReliefPoint="False"/>
+				</PassingTimes>
+				<AllowedVehicleTypes/>
+				<DeniedVehicleTypes/>
+			</Trip>
+			<Trip key="200" StartTime="12/22/2021 17:40:00" Line="1" Path="1">
+				<PassingTimes>
+					<PassingTime key="PassingTime:231" Time="65700" Node="Node:14" IsUsed="True" IsReliefPoint="True"/>
+					<PassingTime key="PassingTime:232" Time="66180" Node="Node:4" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:233" Time="66480" Node="Node:13" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:234" Time="66780" Node="Node:15" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:235" Time="67320" Node="Node:1" IsUsed="True" IsReliefPoint="False"/>
+				</PassingTimes>
+				<AllowedVehicleTypes/>
+				<DeniedVehicleTypes/>
+			</Trip>
+			<Trip key="210" StartTime="12/23/2021 18:40:00" Line="1" Path="3">
+				<PassingTimes>
+					<PassingTime key="PassingTime:226" Time="63900" Node="Node:14" IsUsed="True" IsReliefPoint="True"/>
+					<PassingTime key="PassingTime:227" Time="64380" Node="Node:4" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:228" Time="64680" Node="Node:13" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:229" Time="64980" Node="Node:15" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:230" Time="65520" Node="Node:1" IsUsed="True" IsReliefPoint="False"/>
+				</PassingTimes>
+				<AllowedVehicleTypes/>
+				<DeniedVehicleTypes/>
+			</Trip>
+			<Trip key="220" StartTime="12/15/2021 19:40:00" Line="1" Path="1">
+				<PassingTimes>
+					<PassingTime key="PassingTime:221" Time="63000" Node="Node:14" IsUsed="True" IsReliefPoint="True"/>
+					<PassingTime key="PassingTime:222" Time="63480" Node="Node:4" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:223" Time="63780" Node="Node:13" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:224" Time="64080" Node="Node:15" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:225" Time="64620" Node="Node:1" IsUsed="True" IsReliefPoint="False"/>
+				</PassingTimes>
+				<AllowedVehicleTypes/>
+				<DeniedVehicleTypes/>
+			</Trip>
+			<Trip key="230" StartTime="12/15/2021 20:40:00" Line="1" Path="3">
+				<PassingTimes>
+					<PassingTime key="PassingTime:216" Time="61200" Node="Node:14" IsUsed="True" IsReliefPoint="True"/>
+					<PassingTime key="PassingTime:217" Time="61680" Node="Node:4" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:218" Time="61980" Node="Node:13" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:219" Time="62280" Node="Node:15" IsUsed="True" IsReliefPoint="False"/>
+					<PassingTime key="PassingTime:220" Time="62820" Node="Node:1" IsUsed="True" IsReliefPoint="False"/>
+				</PassingTimes>
+				<AllowedVehicleTypes/>
+				<DeniedVehicleTypes/>
+			</Trip>
+		</Trips>
+		<WorkBlocks>
+			<WorkBlock key="100" StartTime="28800" EndTime="36600" StartNode="SOBRO" EndNode="CRIST" IsCrewTravelTime="False" IsActive="True">
+				<Trips>
+					<ref key="100"/>
+					<ref key="120"/>
+					<ref key="130"/>
+				</Trips>
+			</WorkBlock>
+			<WorkBlock key="110" StartTime="39600" EndTime="46800" StartNode="SOBRO" EndNode="CRIST" IsCrewTravelTime="False" IsActive="True">
+				<Trips>
+					<ref key="140"/>
+					<ref key="150"/>
+				</Trips>
+			</WorkBlock>
+			<WorkBlock key="120" StartTime="46800" EndTime="57600" StartNode="SOBRO" EndNode="CRIST" IsCrewTravelTime="False" IsActive="True">
+				<Trips>
+					<ref key="160"/>
+					<ref key="170"/>
+					<ref key="180"/>
+				</Trips>
+			</WorkBlock>
+			<WorkBlock key="130" StartTime="57600" EndTime="68400" StartNode="SOBRO" EndNode="CRIST" IsCrewTravelTime="False" IsActive="True">
+				<Trips>
+					<ref key="190"/>
+					<ref key="200"/>
+					<ref key="210"/>
+				</Trips>
+			</WorkBlock>
+		</WorkBlocks>
+		<VehicleDuties>
+			<VehicleDuty Name="10" Color="RGB(5,132,107)" Depots="StartEnd" Vehicle="11-11-AB">
+				<WorkBlocks>
+					<ref key="100"/>
+				</WorkBlocks>
+				<ParametersValues/>
+			</VehicleDuty>
+			<VehicleDuty Name="12" Color="RGB(5,132,107)" Depots="StartEnd" Vehicle="12-12-CD">
+				<WorkBlocks>
+					<ref key="110"/>
+					<ref key="120"/>
+				</WorkBlocks>
+				<ParametersValues/>
+			</VehicleDuty>
+			<VehicleDuty Name="13" Color="RGB(5,132,107)" Depots="StartEnd" Vehicle="13-13-DE">
+				<WorkBlocks>
+					<ref key="130"/>
+				</WorkBlocks>
+				<ParametersValues/>
+			</VehicleDuty>
+		</VehicleDuties>
+		<DriverDuties>
+			<DriverDuty Name="10" Color="RGB(172,229,238)" Driver="118072300">
+				<WorkBlocks>
+					<ref key="100"/>
+				</WorkBlocks>
+				<Runs/>
+				<ParametersValues/>
+			</DriverDuty>
+			<DriverDuty Name="12" Color="RGB(26,72,118)" Driver="118071200">
+				<WorkBlocks>
+					<ref key="110"/>
+				</WorkBlocks>
+				<Runs/>
+				<ParametersValues/>
+			</DriverDuty>
+			<DriverDuty Name="13" Color="RGB(252,217,117)" Driver="118071500">
+				<WorkBlocks>
+					<ref key="120"/>
+				</WorkBlocks>
+				<Runs/>
+				<ParametersValues/>
+			</DriverDuty>
+			<DriverDuty Name="14" Color="RGB(252,217,117)" Driver="118071500">
+				<WorkBlocks>
+					<ref key="130"/>
+				</WorkBlocks>
+				<Runs/>
+				<ParametersValues/>
+			</DriverDuty>
+			<DriverDuty Name="15" Color="RGB(252,217,117)" Driver="118071500">
+				<WorkBlocks>
+					<ref key="120"/>
+					<ref key="130"/>
+				</WorkBlocks>
+				<Runs/>
+				<ParametersValues/>
+			</DriverDuty>
+		</DriverDuties>
+	</Schedule>
+</GlDocumentSchedule>

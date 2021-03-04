@@ -1,0 +1,38 @@
+<h2>Visualização das soluções do algoritmo genético</h2>
+<div>
+    <form action="#">
+        <div>
+            <div class="in mdl-textfield mdl-js-textfield form_padding">
+                <label>Serviço do veículo:</label>
+                <input #servicoVeiculo class="mdl-textfield__input"
+                    type="text" id="servicoVeiculo" (change)="verificarServico(servicoVeiculo.value)">
+            </div>
+            <div class="message">
+                <p>{{message.servicoVeiculo}}</p>
+            </div>
+        </div>
+    </form>
+
+    <div class="dropdown">
+        <span><b>Parâmetros do algoritmo &#9947;</b></span>
+        <div class="dropdown-content">
+        <p>Número de gerações: 10</p>
+        <p>Número de gerações estáveis: 5</p>
+        <p>Dimensão da população: 10</p>
+        <p>Probabilidade de cruzamento: 70%</p>
+        <p>Probabilidade de mutação: 5%</p>
+        <p>Percentagem de indivíduos que passam: 70%</p>
+        <p>Tempo absoluto para condição de paragem: 1 segundo</p>
+        <p>Avaliação de término: 100</p>
+        </div>
+    </div>
+    <p></p>
+
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button name="buttonAlgGen" (click)="get(servicoVeiculo.value);
+    servicoVeiculo.value='';
+    clearMessages()"
+        class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button_margin">
+        Obter solução do algoritmo genético
+    </button>
+</div>

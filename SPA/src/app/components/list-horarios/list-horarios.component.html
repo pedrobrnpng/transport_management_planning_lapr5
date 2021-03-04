@@ -1,0 +1,20 @@
+<h2>Horários</h2>
+
+<div>
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th style="width: 450px;">Percurso:</th>
+                <th style="width: 150px;">Linha:</th>
+                <th style="width: 150px;">Hora início:</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let viagem of viagensList">
+                <td>{{getPercursoAux(viagem.idPercurso)}}</td>
+                <td>{{getLinhaAux(viagem.linha)}}</td>
+                <td>{{viagem.horaInicio}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,82 @@
+<div class="card">
+    <h3 class="card-header">Registar</h3>
+    <div class="card-body">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="form-group" class="in mdl-textfield mdl-js-textfield form_padding">
+                <label for="nome">Nome</label>
+                <input type="text" formControlName="nome" class="form-control" class="mdl-textfield__input" [ngClass]="{ 'is-invalid': submitted && f.nome.errors }" />
+                <div *ngIf="submitted && f.nome.errors" class="invalid-feedback">
+                    <div *ngIf="f.nome.errors.required">Nome é obrigatório</div>
+                </div>
+            </div>
+            <p></p>
+            <div class="form-group" class="in mdl-textfield mdl-js-textfield form_padding">
+                <label for="email">Email</label>
+                <input type="text" formControlName="email" class="form-control" class="mdl-textfield__input" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Email é obrigatório</div>
+                </div>
+            </div>
+            <p></p>
+            <div class="form-group" class="in mdl-textfield mdl-js-textfield form_padding">
+                <label for="password">Password</label>
+                <input type="password" formControlName="password" class="form-control" class="mdl-textfield__input" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">Password é obrigatória</div>
+                    <div *ngIf="f.password.errors.minlength">Password tem que ter pelo menos 6 caracteres</div>
+                </div>
+            </div>
+            <p></p>
+
+      <div class="form-group">
+        <label>
+          <input type="checkbox" (change)="onCheckBoxClick($event)" />
+          Aceito que seja efetuado o<a class="btn btn-link" (click)="open(content)">tratamento dos meus dados.</a>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary"
+          class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button_margin">
+          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+          Register
+        </button>
+        <p></p>
+        <a routerLink="../login" class="btn btn-link">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Tratamento de Dados</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <h5> Responsável pelo Tratamento de Dados Pessoais</h5>
+    <p>O responsável pelo tratamento dos dados pessoais é Jorge Vinhais, morador da Rua de Santa Catarina, nº 20 no Porto
+      em Portugal e que possuí o seguinte número de identificação fiscal: 91234219123.</p>
+      <p>Para contatá-lo é possível utilizar o e-mail jvinhais@gmail.com ou o seu número de telemóvel 911113332.</p>
+    <h5>Dados Pessoais Recolhidos, sua Finalidade e fundamento jurídico para o tratamento</h5>
+
+    <p> Para registo na aplicação o utilizador terá de fornecer o seu nome, morada e e-mail, para que possa
+      posteriormente usufruir da totalidade das funcionalidades.</p>
+     <p> Se o utilizador quiser usufruir da funcionalidade de listagem de viagens perto da sua localização atual terá de
+      fornecer essa mesma localização.</p>
+    <p>Se porventura o utilizar necessitar de recuperar a sua password poderá fazê-lo recendo informação na sua conta de
+      e-mail ou fornecendo um número de telefone válido para que se possa comprovar que se trata de facto do dono da
+      conta.</p>
+      <p>Para apresentação de mensagens personalizadas durante o uso da aplicação será usado o nome do utilizador.
+      Para verificar se o utilizador tem uma idade superior a 13 anos será requerido a inserção da sua idade ou data de
+      nascimento.</p>
+      <p>Para qualquer um dos dados pessoais recolhidos expressos em cima o fundamento jurídico para a sua recolha será o
+      consentimento.</p>
+    <h5>Prazo de conservação dos dados pessoais</h5>
+    <a> Todos os dados pessoais serão conservados até o utilizador decidir eliminar a sua conta, com exceção da
+      localização atual do utilizador que só será armazenada durante a listagem de viagens perto dessa localização.
+    </a>
+  </div>
+</ng-template>

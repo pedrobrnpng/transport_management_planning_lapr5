@@ -1,0 +1,33 @@
+<h2>Tipos Tripulante</h2>
+<div>
+    <h6>Criação de tipos de tripulante</h6>
+    <form action="#">
+        <div>
+            <div class="in mdl-textfield mdl-js-textfield form_padding">
+                <label>Código do tipo de tripulante:</label>
+                <input #tipoTripulanteId class="mdl-textfield__input" (blur)="verifica(tipoTripulanteId.value)"
+                    type="text" id="tpid">
+            </div>
+            <div class="message">
+                <p>{{message.id}}</p>
+            </div>
+        </div>
+        <div>
+            <div class="in mdl-textfield mdl-js-textfield form_padding">
+                <label>Descrição:</label>
+                <input #tipoTripulanteDescription class="mdl-textfield__input" type="text" 
+                (blur)="verificaDescricao(tipoTripulanteDescription.value)" id="tpdesc">
+            </div>
+            <div class="message">
+                <p>{{message.description}}</p>
+            </div>
+        </div>
+    </form>
+
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button name="buttonAddTP" (click)="adicionar(tipoTripulanteId.value,tipoTripulanteDescription.value);tipoTripulanteId.value='';
+    tipoTripulanteDescription.value='';clearMessages()"
+        class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button_margin">
+        Adicionar tipo de tripulante
+    </button>
+</div>

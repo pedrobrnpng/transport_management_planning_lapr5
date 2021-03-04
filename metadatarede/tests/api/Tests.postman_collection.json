@@ -1,0 +1,930 @@
+{
+	"info": {
+		"_postman_id": "6931a728-e893-476c-860a-3d1f851c8152",
+		"name": "Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "importarDados",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0a63626b-3771-49c1-bcec-0d47f988d9a5",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/joaol/Desktop/test.glx"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://optlapr.herokuapp.com/api/importarDados",
+					"protocol": "https",
+					"host": [
+						"optlapr",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"importarDados"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AdicionarNo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7fef5e79-91ac-498a-b07b-88bf14793979",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response has a JSON body\", function () {\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Right response\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.id_abreviature).to.equal(\"AML\");\r",
+							"    pm.expect(jsonData.name).to.eql(\"Amial\");\r",
+							"    pm.expect(jsonData.type).to.eql(\"paragem\");\r",
+							"    pm.expect(jsonData.xCoordinate).to.eql(50);\r",
+							"    pm.expect(jsonData.yCoordinate).to.eql(50);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_abreviature\": \"AML\",\r\n    \"name\": \"Amial\",\r\n    \"type\": \"paragem\",\r\n    \"xCoordinate\": \"50\",\r\n    \"yCoordinate\": \"50\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/nos",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"nos"
+					]
+				},
+				"description": "Adiciona um nó válido"
+			},
+			"response": []
+		},
+		{
+			"name": "AdicionarNofail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fc19f596-591a-4b60-a6a8-4cf58d31ec53",
+						"exec": [
+							"pm.test(\"Status code is 402\", function () {\r",
+							"    pm.response.to.have.status(402);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_abreviature\": \"AML\",\r\n    \"name\": \"Amial\",\r\n    \"type\": \"paragem\",\r\n    \"xCoordinate\": \"91\",\r\n    \"yCoordinate\": \"50\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/nos",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"nos"
+					]
+				},
+				"description": "Adiciouna um nó inválido"
+			},
+			"response": []
+		},
+		{
+			"name": "AdicionarTipoTripulanteFalaChinês",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a8490cd3-662d-4628-aedc-2af8f5c5f867",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response has a JSON body\", function () {\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Right response\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.eqls({\r",
+							"        \"id\": \"tp1\",\r",
+							"        \"description\": \"Fala chinês\"\r",
+							"    });\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"tp1\",\r\n    \"description\": \"Fala chinês\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/tipoTripulantes",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tipoTripulantes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AdicionarTipoTripulanteFalaInglês",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5a7a1f92-7b45-45c7-a4fb-306e408a52d7",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response has a JSON body\", function () {\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Right response\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.eqls({\r",
+							"        \"id\": \"tp2\",\r",
+							"        \"description\": \"Fala inglês\"\r",
+							"    });\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"tp2\",\r\n    \"description\": \"Fala inglês\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/tipoTripulantes",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tipoTripulantes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AdicionarTipoTripulanteFail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b9d82381-fc6d-401e-9dd1-bbbf3c93abb6",
+						"exec": [
+							"pm.test(\"Status code is 500\", function () {\r",
+							"    pm.response.to.have.status(500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"tp1\",\r\n    \"description\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/tipoTripulantes",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tipoTripulantes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AdicionarPercurso-2Segmentos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5dd49d68-527c-4457-82bc-f793b9bdd078",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response has a JSON body\", function () {\r",
+							"    pm.response.to.be.json;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"p1\",\r\n    \"segmentosRede\": [{\r\n        \"id\": \"sg1\",\r\n        \"idNoInicio\":  \"AGUIA\",\r\n        \"idNoFim\": \"BALTR\",\r\n        \"distancia\": {\r\n            \"value\": \"10\",\r\n            \"unidadeDistancia\": \"km\"\r\n        },\r\n        \"tempoViagem\": {\r\n            \"value\": \"1\",\r\n            \"unidadeTempo\": \"h\"\r\n        }\r\n    },{\r\n        \"id\":\"sg2\",\r\n        \"idNoInicio\":  \"BALTR\",\r\n        \"idNoFim\": \"AML\",\r\n        \"distancia\": {\r\n            \"value\": \"11\",\r\n            \"unidadeDistancia\": \"km\"\r\n        },\r\n        \"tempoViagem\": {\r\n            \"value\": \"30\",\r\n            \"unidadeTempo\": \"m\"\r\n        }\r\n    }],\r\n    \"idLinha\": \"1\",\r\n    \"direcao\": \"ida\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/percursos",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"percursos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AdicionarPercurso-1Segmento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e1eafa54-2aa5-446d-be59-bab2cbae71fa",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response has a JSON body\", function () {\r",
+							"    pm.response.to.be.json;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"p2\",\r\n    \"segmentosRede\": [{\r\n        \"id\":\"sg1\",\r\n        \"idNoInicio\":  \"AGUIA\",\r\n        \"idNoFim\": \"BALTR\",\r\n        \"distancia\": {\r\n            \"value\": \"10\",\r\n            \"unidadeDistancia\": \"km\"\r\n        },\r\n        \"tempoViagem\": {\r\n            \"value\": \"1\",\r\n            \"unidadeTempo\": \"h\"\r\n        }\r\n    }],\r\n    \"idLinha\": \"2\",\r\n    \"direcao\": \"volta\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/percursos",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"percursos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AdicionarPercursoFail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "40e95d0b-a0b4-4629-8178-27ef2047aaa0",
+						"exec": [
+							"pm.test(\"Status code is 402\", function () {\r",
+							"    pm.response.to.have.status(500);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"p3\",\r\n    \"segmentosRede\": [{\r\n        \"id\": \"sg1\",\r\n        \"idNoInicio\":  \"no1\",\r\n        \"idNoFim\": \"no2\",\r\n        \"distancia\": {\r\n            \"value\": \"10\",\r\n            \"unidadeDistancia\": \"km\"\r\n        },\r\n        \"tempoViagem\": {\r\n            \"value\": \"1\",\r\n            \"unidadeTempo\": \"h\"\r\n        }\r\n    },{\r\n        \"id\": \"sg2\",\r\n        \"idNoInicio\":  \"no4\",\r\n        \"idNoFim\": \"no3\",\r\n        \"distancia\": {\r\n            \"value\": \"11\",\r\n            \"unidadeDistancia\": \"km\"\r\n        },\r\n        \"tempoViagem\": {\r\n            \"value\": \"30\",\r\n            \"unidadeTempo\": \"m\"\r\n        }\r\n    }],\r\n    \"idLinha\": \"linha1\",\r\n    \"direcao\": \"ida\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/percursos",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"percursos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Perscursos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a2952661-0a00-4110-ae63-8f0613415d44",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response has a JSON body\", function () {\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idLinha\":\"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/percursos",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"percursos"
+					]
+				},
+				"description": "Listar Percursos Existentes"
+			},
+			"response": []
+		},
+		{
+			"name": "adicionarLinha2Tipos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "83701c1b-2b14-4a8a-ac05-deb7f9ad5cf8",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response has a JSON body\", function () {\r",
+							"    pm.response.to.be.json;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"9\",\r\n    \"codigo\": \"p\",\r\n    \"nome\": \"Lisboa_Porto\",\r\n    \"idTiposTripulante\": [\"3\", \"2\"],\r\n    \"idTiposViatura\": [\"1\", \"2\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/linhas",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"linhas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "adicionarLinha2Tipos fail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bcf68365-0c6a-47a6-8ae5-8477276ab47a",
+						"exec": [
+							"pm.test(\"Status code is 402\", function () {\r",
+							"    pm.response.to.have.status(500);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"9\",\r\n    \"codigo\": \"p\",\r\n    \"nome\": \"Lisboa_Porto\",\r\n    \"idTiposTripulante\": [\"32\", \"2\"],\r\n    \"idTiposViatura\": [\"4\", \"323\"]\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/linhas",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"linhas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "adicionarLinhaTViatura",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3f0705b5-bdcf-406e-b27b-13514590e663",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response has a JSON body\", function () {\r",
+							"    pm.response.to.be.json;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"9\",\r\n    \"codigo\": \"p\",\r\n    \"nome\": \"Lisboa_Porto\",\r\n    \"idTiposViatura\": [\"1\", \"2\"]\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/linhas",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"linhas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "adicionarLinhaTViatura fail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e406f92b-00ac-4f08-80e1-beb325cfb6b6",
+						"exec": [
+							"pm.test(\"Status code is 402\", function () {\r",
+							"    pm.response.to.have.status(500);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"9\",\r\n    \"codigo\": \"p\",\r\n    \"nome\": \"Lisboa_Porto\",\r\n    \"idTiposViatura\": [\"4\", \"323\"]\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/linhas",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"linhas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "adicionarLinhaTTripulante",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ebaf03e2-92fe-4e29-b31d-b39ce3c18706",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response has a JSON body\", function () {\r",
+							"    pm.response.to.be.json;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"9\",\r\n    \"codigo\": \"p\",\r\n    \"nome\": \"Lisboa_Porto\",\r\n    \"idTiposTripulante\": [\"3\", \"2\"]\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/linhas",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"linhas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "adicionarLinhaTTripulante fail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c6cfb217-8bea-46cf-a0f1-3f11d99e1fd1",
+						"exec": [
+							"pm.test(\"Status code is 402\", function () {\r",
+							"    pm.response.to.have.status(500);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"9\",\r\n    \"codigo\": \"p\",\r\n    \"nome\": \"Lisboa_Porto\",\r\n    \"idTiposTripulante\": [\"3\", \"323\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/linhas",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"linhas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "adicionarTipoViatura",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d2d738b1-3e3f-445b-9c90-80ea325212a3",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response has a JSON body\", function () {\r",
+							"    pm.response.to.be.json;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"24321663\",\r\n    \"codigo\": \"12345678912345678912\",\r\n    \"descricao\": \"Autocarro A Gasolina\",\r\n    \"combustivel\": 1,\r\n    \"autonomia\": 200,\r\n    \"velocidadeMedia\": 30,\r\n    \"custoKM\": {\r\n        \"valor\": 4,\r\n        \"moeda\": \"EUR\"\r\n    },\r\n    \"consumoMedio\": 6\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/tipoViatura",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tipoViatura"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "adicionarTipoViatura fail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ee955538-eab2-4719-84f2-e9593f7ab327",
+						"exec": [
+							"pm.test(\"Status code is 402\", function () {\r",
+							"    pm.response.to.have.status(500);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"24321663\",\r\n    \"codigo\": \"12345678912345678912\",\r\n    \"descricao\": \"Autocarro A Gasolina\",\r\n    \"autonomia\": 200,\r\n    \"velocidadeMedia\": 30,\r\n    \"custoKM\": {\r\n        \"valor\": 4,\r\n        \"moeda\": \"EUR\"\r\n    },\r\n    \"consumoMedio\": 6\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/tipoViatura",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tipoViatura"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Nós",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e927a036-79b2-4c76-9e2b-f67528b0b139",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response has a JSON body\", function () {\r",
+							"    pm.response.to.be.json;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/nos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"nos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Linhas",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a5c3b34e-bae7-4a95-bad1-a857d6c47bfe",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response has a JSON body\", function () {\r",
+							"    pm.response.to.be.json;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/linhas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"linhas"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

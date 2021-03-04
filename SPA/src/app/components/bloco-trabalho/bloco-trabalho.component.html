@@ -1,0 +1,57 @@
+<h3>Blocos de trabalho</h3>
+<div>
+    <form action="#">
+        <div class="form_padding_block">
+            <div class="in mdl-textfield mdl-js-textfield form_padding_inline">
+                <label>Número de blocos:</label>
+                <input #nbtId class="mdl-textfield__input" type="text" (change)="verificaNBlocos(nbtId.value)" id="nbtId">
+            </div>
+            <div class="message">
+                <p>{{message.nBlocos}}</p>
+            </div>
+        </div>
+        <div class="form_padding_block">
+            <div class="form_padding_block">
+                <input #hI type="time" id="tempoI" (change)="verificaHoras(hI.value,hF.value)"> Hora de início
+            </div>
+            <div class="message">
+                <p>{{message.horaInicio}}</p>
+            </div>
+            <div class="form_padding_block">
+                <input #hF type="time" id="tempoF" (change)="verificaHoras(hI.value,hF.value)"> Hora de fim
+            </div>
+            <div class="message">
+                <p>{{message.horaFim}}</p>
+            </div>
+        </div>
+        <div class="form_padding_block">
+            <div class="in content-width mdl-textfield">
+                <label class="margin_listbox">Nó de Início:</label>
+                <select id="noI" name='sgIdNoInicio' #sgIdNoInicio
+                (change)="verificaNos(sgIdNoInicio.value,sgIdNoFim.value)">
+                    <option *ngFor="let no of nos" [value]="no.id_abreviature">{{no.id_abreviature}}</option>
+                </select>
+            </div>
+            <div class="message">
+                <p>{{message.noInicio}}</p>
+            </div>
+        </div>
+        <div class="form_padding_block">
+            <div class="in content-width mdl-textfield">
+                <label class="margin_listbox">Nó de Fim:</label>
+                <select id="noF" name='sgIdNoFim' #sgIdNoFim
+                (change)="verificaNos(sgIdNoFim.value,sgIdNoInicio.value)">
+                    <option *ngFor="let no of nos" [value]="no.id_abreviature">{{no.id_abreviature}}</option>
+                </select>
+            </div>
+            <div class="message">
+                <p>{{message.noFim}}</p>
+            </div>
+        </div>
+        <p></p>
+        <button name="buttonAddBloco" (click)="adicionarBloco()"
+        class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button_margin">
+            Adicionar Bloco
+        </button>
+    </form>
+</div>

@@ -1,0 +1,91 @@
+<div class="mdl-color--white mdl-cell mdl-cell--8-col content_padding">
+    <h2>Nós da Rede</h2>
+    <div>
+        <div class="in mdl-textfield mdl-js-textfield form_padding">
+            <label>Abreviatura:</label>
+            <input [(ngModel)]='no.id_abreviature' class="mdl-textfield__input" type="text"
+                (keyup)="verificarAbreviatura()" id="abrev">
+        </div>
+        <div class="message">
+            <p>{{message.abreviatura}}</p>
+        </div>
+    </div>
+
+    <div>
+        <div class="in mdl-textfield mdl-js-textfield form_padding">
+            <label>Nome:</label>
+            <input [(ngModel)]='no.name' class="mdl-textfield__input" type="text" (keyup)="verificarNome()" id="nome">
+        </div>
+        <div class="message">{{message.nome}}</div>
+    </div>
+
+    <div>
+        <div class="in mdl-textfield mdl-js-textfield form_padding">
+            <label>Tipo:</label>
+            <div class="radio form_padding">
+                <input (change)="verificarTipo()" [(ngModel)]='no.type' class="mdl-radio__input" type="radio"
+                    name="tipo" value="paragem" id="paragem" checked="checked">
+                <label for="Paragem">Paragem</label><br>
+                <input (change)="verificarTipo()" [(ngModel)]='no.type' class="mdl-radio__input" type="radio"
+                    name="tipo" value="estacaoRecolha" id="estacaorecolha">
+                <label for="estacaoRecolha">Estação de Recolha</label><br>
+                <input (change)="verificarTipo()" [(ngModel)]='no.type' class="mdl-radio__input" type="radio"
+                    name="tipo" value="pontoRendicao" id="pontorendicao">
+                <label for="pontoRendicao">Ponto de Rendição</label>
+            </div>
+        </div>
+        <div class="message">{{message.tipo}}</div>
+    </div>
+
+    <div>
+        <div class="in mdl-textfield mdl-js-textfield form_padding">
+            <label>Latitude:</label>
+            <input [(ngModel)]='no.xCoordinate' class="mdl-textfield__input" type="text" (keyup)="verificarLatitude()"
+                id="lat">
+        </div>
+        <div class="message">{{message.latitude}}</div>
+    </div>
+
+    <div>
+        <div class="mdl-textfield mdl-js-textfield form_padding">
+            <label>Longitude:</label>
+            <input [(ngModel)]='no.yCoordinate' class="mdl-textfield__input" type="text" (keyup)="verificarLongitude()"
+                id="lon">
+        </div>
+        <div class="message">{{message.longitude}}</div>
+    </div>
+
+
+
+    <button name="adicionar" (click)="adicionar()"
+        class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button_margin">
+        Adicionar
+    </button>
+</div>
+
+<div class="mdl-color--white mdl-cell mdl-cell--8-col content_padding">
+    <h2>Alterar modelo do Nó</h2>
+    <div>
+        <div class="in mdl-textfield mdl-js-textfield form_padding">
+            <label>No:</label>
+            <select [(ngModel)]='noModelo.no' id='noModelo' (change)="verificarNo()">
+                <option *ngFor="let e of nos" [value]="e.id_abreviature">{{e.name}}</option>
+            </select>
+        </div>
+        <div class="message"></div>
+    </div>
+
+    <div>
+        <div class="mdl-textfield mdl-js-textfield form_padding">
+            <label>Modelo:</label>
+            <input [(ngModel)]='noModelo.modelo' class="mdl-textfield__input" type="text"
+                (keyup)="verificarModelo()" id="noModelo">
+        </div>
+        <div class="message"></div>
+    </div>
+
+    <button name="adicionarModelo" (click)="adicionarModelo()"
+        class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button_margin">
+        Adicionar
+    </button>
+</div>

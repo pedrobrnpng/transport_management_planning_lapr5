@@ -1,0 +1,120 @@
+<div class="mdl-color--white mdl-cell mdl-cell--8-col content_padding">
+
+    <h2>Criar Viagem</h2>
+    <div>
+        <div class="in mdl-textfield mdl-js-textfield form_padding">
+            <label>Hora de Início:</label>
+            <input [(ngModel)]='viagem.horaInicio' class="mdl-textfield__input" type="datetime-local" (change)="verificarHorarioViagem()"
+                id="horaInicio">
+        </div>
+        <div class="message">
+            <p>{{messageViagem.horaInicio}}</p>
+        </div>
+    </div>
+
+    <div>
+        <div class="mdl-textfield mdl-js-textfield form_padding">
+            <label>Linha:</label>
+            <select [(ngModel)]='viagem.linha' id='linha' (change)="getPercursos();verificarLinha()">
+                <option *ngFor="let linha of linhas" [value]="linha.id">{{linha.nome}}</option>
+            </select>
+        </div>
+        <div class="message">{{messageViagem.linha}}</div>
+    </div>
+
+    <div>
+        <div class="in mdl-textfield mdl-js-textfield form_padding">
+            <label>Percurso:</label>
+            <select [(ngModel)]='viagem.idPercurso' id='idPercurso' (change)="verificarPercurso()">
+                <option *ngFor="let percurso of percursos" [value]="percurso.id">{{percurso.id}}</option>
+            </select>
+        </div>
+        <div class="message">{{messageViagem.idPercurso}}</div>
+    </div>
+
+
+
+    <button name="adicionarViagem" (click)="adicionarViagem();getViagens();"
+        class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button_margin">
+        Adicionar
+    </button>
+
+</div>
+<app-message></app-message>
+
+<div class="mdl-color--white mdl-cell mdl-cell--8-col content_padding">
+    <h2>Criar conjunto de Viagens</h2>
+    <div>
+        <div class="in mdl-textfield mdl-js-textfield form_padding">
+            <label>Hora de Início:</label>
+            <input [(ngModel)]='viagens.horaInicio' class="mdl-textfield__input" type="datetime-local" (change)="verificarHorarioViagens()"
+                id="horaInicio">
+        </div>
+        <div class="message">
+            <p>{{messageViagens.horaInicio}}</p>
+        </div>
+    </div>
+
+    <div>
+        <div class="mdl-textfield mdl-js-textfield form_padding">
+            <label>Frequencia (minutos):</label>
+            <input [(ngModel)]='viagens.frequencia' class="mdl-textfield__input" type="text" (keyup)="verificarFrequencia()"
+                id="frequencia">
+        </div>
+        <div class="message">{{messageViagens.frequencia}}</div>
+    </div>
+
+    <div>
+        <div class="mdl-textfield mdl-js-textfield form_padding">
+            <label>Número de Viagens:</label>
+            <input [(ngModel)]='viagens.nViagens' class="mdl-textfield__input" type="text" (keyup)="verificarNViagens()"
+                id="nViagens">
+        </div>
+        <div class="message">{{messageViagens.nViagens}}</div>
+    </div>
+
+    <div>
+        <div class="in mdl-textfield mdl-js-textfield form_padding">
+            <label>Percurso Ida:</label>
+            <select [(ngModel)]='viagens.idPercursoIda' id='idPercursoIda' (change)="verificarPercursoIda()">
+                <option *ngFor="let percurso of percursosIda" [value]="percurso.id">{{percurso.id}}</option>
+            </select>
+        </div>
+        <div class="message">{{messageViagens.idPercursoIda}}</div>
+    </div>
+
+    <div>
+        <div class="in mdl-textfield mdl-js-textfield form_padding">
+            <label>Percurso Volta:</label>
+            <select [(ngModel)]='viagens.idPercursoVolta' id='idPercursoVolta' (change)="verificarPercursoVolta()">
+                <option *ngFor="let percurso of percursosVolta" [value]="percurso.id">{{percurso.id}}</option>
+            </select>
+        </div>
+        <div class="message">{{messageViagens.idPercursoVolta}}</div>
+    </div>
+
+    <button name="adicionarViagens" (click)="adicionarViagens(); getViagens();"
+        class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button_margin">
+        Adicionar
+    </button>
+    <app-message></app-message>
+    <div>
+      <table class="content-table">
+          <thead>
+              <tr>
+                  <th style="width: 150px;">Código de Viagem:</th>
+                  <th style="width: 650px;">Linha:</th>
+                  <th style="width: 150px;">Percurso:</th>
+                  <th style="width: 150px;">Hora início:</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let viagem of viagensList">
+                  <td>{{viagem.codigo}}</td>
+                  <td>{{getPercursoAux(viagem.idPercurso)}}</td>
+                  <td>{{getLinhaAux(viagem.linha)}}</td>
+                  <td>{{viagem.horaInicio}}</td>
+              </tr>
+          </tbody>
+      </table>
+</div>
